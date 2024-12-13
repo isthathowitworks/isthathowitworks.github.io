@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- "Lexend Deca", sans-serif; -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Lexend+Deca:wght@100..900&family=Mouse+Memoirs&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        
+        <style>
+            body {  
+                margin: auto;
+                background-size: cover;
+                background-color: #181818;
+                padding: 100px;
+            }
+            
+            /* button */
+            /* Button styling */
+            .arrow-button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 30px 40px;
+                font-size: 16px;
+                font-weight: bold;
+                color: white;
+                background-color: #181818;
+                border: none;
+                border-radius: 150px;
+                cursor: pointer;
+                position: relative; 
+                left: 30px;
+                top: 25px;
+                overflow: hidden; 
+            }
+
+            /* Arrow inside button */
+            .arrow-button .arrow {
+                width: 10px;
+                height: 10px;
+                border: solid white;
+                border-width: 2px 2px 0 0;
+                transform: rotate(225deg);
+                position: relative; 
+                z-index: 2; /* Ensure it stays visible above the transition effect */
+                transition: margin-right 0.3s ease;
+            }
+
+            .arrow-button:hover .arrow {
+                margin-right: 88px; 
+            }
+
+            /* Text styling */
+            .arrow-button .text {
+                visibility: hidden; /
+                opacity: 0; 
+                transition: visibility 0s, opacity 0.7s ease;
+                position: relative; 
+                z-index: 1; /* Keep text above the expanding transition */
+            }
+
+            .arrow-button:hover .text {
+                visibility: visible; /* Show text on hover */
+                opacity: 1; /* Fully visible text */
+            }
+
+            /* Transition effect */
+            .transition {
+                transition: width 500ms ease, height 500ms ease; /* Smooth growing effect */
+                background-color: #718355;
+                border-radius: 9999px;
+                width: 0;
+                height: 0;
+                position: absolute; /* Position inside the button */
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%); /* Center the transition */
+                z-index: 0; /* Place it behind the text and arrow */
+            }
+
+            .arrow-button:hover .transition {
+                width: 100%; /* Expand to fill the button */
+                height: 100%; /* Expand to fill the button */
+            }
+
+            .text {
+                margin-left: -70px;
+            }
+            /* button */
+
+            #rectangle {
+                width: 1200px;
+                height:3830px;
+                background-color: #2b2b2b;
+                margin:auto;
+                margin-bottom: 150px;
+                border-bottom-right-radius: 30px;
+                border-bottom-left-radius: 30px;
+                border-top-right-radius: 30px;
+                border-top-left-radius: 30px;
+                position: relative;
+                font-family: "Open Sans", sans-serif;
+                margin-top: 150px;
+            }
+
+            .Title {
+                text-align: center;
+            }
+
+            #title1{
+                margin-top: 60px;
+                color: #ffffff;
+                font-size: 50px;
+                justify-content: center;
+                display: flex;
+                font-family: "Lexend Deca", sans-serif;
+                display: inline-block;
+                position: relative;  /* Needed for absolute positioning of the pseudo-element */
+            }
+
+            #title1::after {
+                content: ''; 
+                position: absolute;
+                left: -25px; /* Align it to the left edge of the container */
+                bottom: -20px; /* Place it at the bottom of the text */
+                width: 225px; /* Control the length of the bottom border */
+                height: 6px; /* Border thickness */
+                background-color: #718355;
+                border-radius: 10px;
+            }
+
+            #date{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 45px;
+                color: #ffffff;
+                font-size: 20px;
+                justify-content: center;
+                display: flex;
+                font-family: "Lexend Deca", sans-serif;
+                
+            }
+
+            .container1, .container2, .container3, .container4, .container5, .container6 {
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                margin-top: 90px;
+                padding-right: 90px ;
+                padding-left: 90px ;
+            }
+
+            .rectangle1, .rectangle2, .rectangle3, .rectangle4, .rectangle5, .rectangle6, .rectangle7, .rectangle8, .rectangle9, .rectangle10, .rectangle11, .rectangle12 {
+                width:400px;
+                height:480px;
+                background-color: #181818;
+                margin:auto;
+                border-radius: 30px ;
+                font-family: "Open Sans", sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;    
+                flex-direction: column;
+            }
+
+            #pictureone, #picturetwo, #picturethree, #picturefour, #picturefive, #picturesix, #pictureseven, #pictureeight, #picturenine, #pictureten, #pictureeleven, #picturetwelve{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 50px;
+                color: #ffffff;
+                font-size: 30px;
+                justify-content: center;
+                display: flex;
+                font-family: "Lexend Deca", sans-serif;
+            }
+
+            #january, #february, #march, #april, #may, #june, #july, #august, #september, #october, #november, #december{
+                display: flex;
+                width: 300px;
+                height: auto;
+                border: 5px;
+                border-radius: 15px;
+                border-style: solid;
+                border-color: #2b2b2b;
+            }
+
+
+            
+
+        </style>
+    </head>
+    <body>
+        <body>    
+            <div>
+                <div id="rectangle">
+                    <button class="arrow-button" onclick="location.href='profilewebsite.html'">
+                        <div class="arrow reappear"></div> <!-- Add the "reappear" class -->
+                        <span class="transition"></span>
+                        <span class="text">Go Back</span>
+                    </button>                
+                    
+                    <div class="Title">
+                        <span id="title1">Gallery</span>
+                    </div>
+
+                    <div class="Title">
+                        <span id="date">January 2024 to December 2024</span>
+                    </div>
+
+                    <div class="container1">
+                        <div class="rectangle1">
+                            <img src="january.jpg" alt="picture1" id="january">
+                            <span id="pictureone"> January </span>
+                        </div>
+                        <div class="rectangle2"> 
+                            <div>
+                                <img src="february.jpeg" alt="picture2" id="february">
+                                <span id="picturetwo"> February </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container2">
+                        <div class="rectangle3">
+                            <img src="march.jpg" alt="picture3" id="march">
+                            <span id="picturethree"> March </span>
+                        </div>
+                        <div class="rectangle4"> 
+                            <div>
+                                <img src="april.jpg" alt="picture4" id="april">
+                                <span id="picturefour"> April </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container3">
+                        <div class="rectangle5">
+                            <img src="may.jpg" alt="picture5" id="may">
+                            <span id="picturefive"> May </span>
+                        </div>
+                        <div class="rectangle6"> 
+                            <div>
+                                <img src="june.jpg" alt="picture6" id="june">
+                                <span id="picturesix"> June </span>
+                            </div>
+                        </div>
+                    </div> 
+
+                    <div class="container4">
+                        <div class="rectangle7">
+                            <img src="july.jpg" alt="picture7" id="july">
+                            <span id="pictureseven"> July </span>
+                        </div>
+                        <div class="rectangle8"> 
+                            <div>
+                                <img src="august.jpg" alt="picture8" id="august">
+                                <span id="pictureeight"> August </span>
+                            </div>
+                        </div>
+                    </div>  
+
+                    <div class="container5">
+                        <div class="rectangle9">
+                            <img src="september.jpg" alt="picture9" id="september">
+                            <span id="picturenine"> September </span>
+                        </div>
+                        <div class="rectangle10"> 
+                            <div>
+                                <img src="october.jpg" alt="picture10" id="october">
+                                <span id="pictureten"> October </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container6">
+                        <div class="rectangle11">
+                            <img src="november.jpg" alt="picture11" id="november">
+                            <span id="pictureeleven"> November </span>
+                        </div>
+                        <div class="rectangle12"> 
+                            <div>
+                                <img src="december.jpg" alt="picture12" id="december">
+                                <span id="picturetwelve"> December </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </body>
+</html>
+
+<!-- .arrow-button .text {
+    visibility: hidden;  Hide text by default 
+    opacity: 0;  Fully transparent text 
+    transition: visibility 0s, opacity 0.3s ease;  Smooth fade-in effect 
+}
+
+.arrow-button:hover .text {
+    visibility: visible;  Show text on hover 
+    opacity: 1;  Fully visible text 
+} -->
